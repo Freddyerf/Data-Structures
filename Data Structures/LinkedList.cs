@@ -8,7 +8,7 @@ namespace Data_Structures
 {
     class LinkedList<T>
     {
-        private Node<T> head;
+        private ListNode<T> head;
 
         public LinkedList()
         {
@@ -18,7 +18,7 @@ namespace Data_Structures
         // LIFO
         public void InsertFirst(T value)
         {
-            var current = new Node<T>(value);
+            var current = new ListNode<T>(value);
             if (this.head == null)
             {
                 this.head = current;
@@ -34,7 +34,7 @@ namespace Data_Structures
         // FIFO
         public void Append(T value)
         {
-            var current = new Node<T>(value);
+            var current = new ListNode<T>(value);
             if (this.head == null)
             {
                 this.head = current;
