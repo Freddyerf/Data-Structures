@@ -4,20 +4,20 @@ using System.Text;
 
 namespace Data_Structures
 {
-    class Node<T>
+    class ListNode<T>
     {
         public T Value { get; set; }
-        public Node<T> Next { get; set; }
+        public ListNode<T> Next { get; set; }
 
-        public Node(T value)
+        public ListNode(T value)
         {
             this.Value = value;
         }
 
-        public Node(T value, Node<T> node)
+        public ListNode(T value, ListNode<T> next)
         {
             this.Value = value;
-            this.Next = node;
+            this.Next = next;
         }
 
     }
