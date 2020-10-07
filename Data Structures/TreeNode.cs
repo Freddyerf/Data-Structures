@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Data_Structures
 {
-    class TreeNode<T>
+    class TreeNode<T> where T : IComparable
     {
         public T Value { get; set; }
 
@@ -28,6 +28,25 @@ namespace Data_Structures
             this.Left = left;
             this.Right = right;
             this.Value = value;
+        }
+
+        public int CompareTo(object obj)
+        {
+            if (obj == null)
+            {
+                return 1;
+            }
+
+            TreeNode<T> otherNode = obj as TreeNode<T>;
+            if (otherNode != null)
+            {
+                return this.Value.CompareTo(otherNode.Value);
+            }
+            else
+            {
+                throw new ArgumentException("Object is not comparable");
+            }
+            
         }
     }
 }
