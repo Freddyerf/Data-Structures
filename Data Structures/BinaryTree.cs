@@ -55,5 +55,29 @@ namespace Data_Structures
             }
         }
 
+        public string InOrderTraversal()
+        {
+            var sb = new System.Text.StringBuilder();
+
+            Stack<TreeNode<T>> nodes = new Stack<TreeNode<T>>();
+
+            var current = this.root;
+            while (current != null || nodes.Count > 0)
+            {
+                while (current != null)
+                {
+                    nodes.Push(current);
+                    current = current.Left;
+                }
+
+                current = nodes.Pop();
+                sb.Append(current.Value + " ");
+                current = current.Right;
+                
+            }
+
+            return sb.ToString();
+        }
+
     }
 }
